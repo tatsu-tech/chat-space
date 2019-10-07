@@ -1,0 +1,47 @@
+.header
+  グループを作成しました
+.side_bar
+  .up_side
+    .up_side_bar
+      .user_name
+        tatsu
+      .link_icon
+        =link_to "", class: "edit_account" do
+          = fa_icon 'cog'
+      .link_icon
+        =link_to "", class: "new_group" do
+          = fa_icon 'pencil-square-o'
+  .down_side
+    .group_lists
+      .group_name
+        tatsuのグループ<br>
+      .last_message
+        こんにちは
+.chat_screen
+  .top_screen
+    .top_screen_left
+      .group_name
+        tatsuのグループ
+      .member_names
+        Member : tatsu
+    .top_screen_right
+      .edit_button
+        Edit
+  .main_screen
+    .message_lists
+      .message_detail
+        .message_name
+          tatsu
+        .message_date
+          2019/10/04(Fri) 21:31:14
+        .message_text
+          こんにちは
+  .bottom_screen
+    .bottom_screen_bar
+      .text_box
+        ここに入力してください
+        .link_icon
+          =link_to "", class: "photo_link" do
+            = fa_icon 'image'
+      .send_button
+        Send
