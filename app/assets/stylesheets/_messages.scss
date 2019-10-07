@@ -1,4 +1,4 @@
-.header {
+.top {
   height: 24px;
   width: 100vw;
   color: #FFFFFF;
@@ -7,12 +7,12 @@
   text-align: center;
 }
 
-.side_bar {
+.side {
   height: 100vh;
   width: 300px;
   float: left;
 
-  .up_side {
+  .side__up {
     height: 100px;
     color: #FFFFFF;
     font-size: 16px;
@@ -20,69 +20,69 @@
     background-color: #253141;
     line-height: 100px;
     padding: 0 20px;
-      .up_side_bar {
-        .user_name {
-          height: 100px;
-          float: left;
-        }
-        .edit_account {
-          color: #FFFFFF;
-          float: right;
-          margin-left: 3px;
-          }
-        .new_group {
-          color:#FFFFFF;
-          float: right;
-        }
+
+    &__user-name {
+      height: 100px;
+      float: left;
+    }
+    .edit-account {
+      color: #FFFFFF;
+      float: right;
+      margin-left: 3px;
       }
+    .new-group {
+      color:#FFFFFF;
+      float: right;
+    }
   }
-  .down_side {
+  .side__under {
     height: calc(100vh - 100px);
     color: #FFFFFF;
     background-color: #2f3e51;
     padding: 0 20px;
-      .group_lists {
-        .group_name {
+        &__group-name {
           font-size: 15px;
           font-weight: bold;
           padding-top: 20px
         }
-        .last_message {
+        &__last-message {
           font-size: 11px;
           font-weight: bold;
           padding: 5px 0 40px 0;
         }
-      }
   }
 }
 
-.chat_screen {
+.main {
   height: 100vh;
   width: calc(100vw - 300px);
   float: right;
 
-  .top_screen {
+  &__up {
     height: 100px;
     padding: 0 40px;
-    .top_screen_left {
+
+    &__left {
       float: left;
-      .group_name {
+
+      &__group-name {
         height: 30px;
         font-size: 20px;
         color: #333333;
         line-height: 30px;
         padding: 35px 0 15px 0;
       }
-      .member_names {
+      &__member-names {
         height: 20px;
         font-size: 12px;
         color: #999999;
       }
     }
-    .top_screen_right {
+    &__right {
       float: right;
       margin-top: 28px;
-      .edit_button {
+
+      &__edit-button {
         color: #38AEF0;
         font-size: 16px;
         border: solid 1px #38AEF0;
@@ -92,55 +92,56 @@
         }
     }
   }
-  .main_screen {
+  .main__center {
     height: calc(100vh - 282px);
     background-color: #fafafa;
     padding: 46px 40px;
-    .message_lists {
-      .message_detail {
-        .message_name {
-          font-size: 16px;
-          font-weight: bold;
-          padding-right: 10px;
-          float: left;
-        }
-        .message_date {
-          color: #999999;
-          font-size: 12px;
-          float: left;
-        }
-      }
-      .message_text {
-        font-size: 14px;
-        clear: both;
-        padding: 10px 0 40px 0;
-      }
+    
+    &__message-name {
+      font-size: 16px;
+      font-weight: bold;
+      padding-right: 10px;
+      float: left;
     }
-  }
-  .bottom_screen {
+    &__message-date {
+      color: #999999;
+      font-size: 12px;
+      float: left;
+    }
+    &__message-text {
+      font-size: 14px;
+      clear: both;
+      padding: 10px 0 40px 0;
+    }
+}
+  .main__under {
     height: 90px;
     color: #FFFFFF;
     font-size: 16px;
     background-color: #dddddd;
     padding: 0 40px;
-    .bottom_screen_bar {
+
+    &__contents {
       padding-top: 20px;
       width: 100%;
-      .text_box {
+
+      &__text-box {
         background-color: #FFFFFF;
         width: calc(100% - 115px);
         height: 50px;
         float: left;
-        .link_icon {
+
+        &__link-icon {
           float: right;
           padding-right: 10px;
           line-height: 50px;
-          .photo_link {
+
+          .photo-link {
             color: black;
           }
         }
       }
-      .send_button {
+      &__send-button {
         background-color: #38AEF0;
         height: 50px;
         width: 100px;
