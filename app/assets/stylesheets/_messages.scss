@@ -28,9 +28,10 @@
   }
   .side__under {
     height: calc(100vh - 100px);
-    
+    overflow: scroll;
     background-color: #2f3e51;
     padding: 0 20px;
+    
       .group-link {
         color: #FFFFFF;
         text-decoration: none;
@@ -95,6 +96,7 @@
     height: calc(100vh - 282px);
     background-color: #fafafa;
     padding: 46px 40px;
+    overflow: scroll;
     
     &__message-name {
       font-size: 16px;
@@ -123,6 +125,7 @@
     &__contents {
       padding-top: 20px;
       width: 100%;
+      position: relative;
 
       &__text-box {
         background-color: #FFFFFF;
@@ -131,29 +134,30 @@
         float: left;
 
         &__link-icon {
-          float: right;
           padding-right: 10px;
           line-height: 50px;
-
-          .photo-link {
+          position: relative;
+          
+          .selected-photo {
             color: black;
+            position: absolute;
+            top: 18px;
+            right: 130px;
+          }
+          .photo-link {
+            display: none;
           }
         }
       }
       &__send-button {
         background-color: #38AEF0;
-        height: 50px;
-        width: 100px;
+        width: 90px;
         color: #FFFFFF;
         float: right;
         font-size: 20px;
         line-height: 50px;
         text-align: center;
         margin-left: 15px;
-        .send-message {
-          text-decoration: none;
-          color: #FFFFFF
-        }
       }
     }
   }
