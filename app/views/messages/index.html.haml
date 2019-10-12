@@ -19,12 +19,14 @@
   .main__up
     .main__up__left
       .main__up__left__group-name
-        tatsuのグループ
+        = @group.name
       .main__up__left__member-names
-        Member : tatsu
+        Member :
+        - @group.users.each do |user|
+          = user.name
     .main__up__right
       .main__up__right__edit-button
-        =link_to "Edit", "",class: "edit-group"
+        =link_to "Edit", edit_group_path(@group), class: "edit-group"
   .main__center
     = render @messages
   .main__under
