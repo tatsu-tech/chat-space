@@ -1,43 +1,40 @@
-.top
-  グループを作成しました
 .side
   .side__up
     .side__up__user-name
-      tatsu
+      = current_user.name
     .side__up__link-icon
-      =link_to "", class: "edit-account" do
+      =link_to edit_user_path(current_user), class: "edit-account" do
         = fa_icon 'cog'
     .side__up__link-icon
-      =link_to "", class: "new-group" do
+      =link_to new_group_path, class: "new-group" do
         = fa_icon 'pencil-square-o'
   .side__under
-    .side__under__group-name
-      tatsuのグループ<br>
-    .side__under__last-message
-      こんにちは
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group), class: 'group-link' do
+        .side__under__group-name
+          = group.name
+        .side__under__last-message
+          = group.show_last_message
 .main
   .main__up
     .main__up__left
       .main__up__left__group-name
-        tatsuのグループ
+        = @group.name
       .main__up__left__member-names
-        Member : tatsu
+        Member :
+        - @group.users.each do |user|
+          = user.name
     .main__up__right
       .main__up__right__edit-button
-        Edit
+        =link_to "Edit", edit_group_path(@group), class: "edit-group"
   .main__center
-    .main__center__message-name
-      tatsu
-    .main__center__message-date
-      2019/10/04(Fri) 21:31:14
-    .main__center__message-text
-      こんにちは
+    = render @messages
   .main__under
     .main__under__contents
-      .main__under__contents__text-box
-        ここに入力してください
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'main__under__contents__text-box', placeholder: 'ここに入力してください'
         .main__under__contents__text-box__link-icon
-          =link_to "", class: "photo-link" do
-            = fa_icon 'image'
-      .main__under__contents__send-button
-        Send
+          = f.label :image do
+            = fa_icon 'picture-o', class: 'selected-photo'
+            = f.file_field :image, class: 'photo-link'
+        = f.submit 'Send', class: 'main__under__contents__send-button'

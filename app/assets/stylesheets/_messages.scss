@@ -1,12 +1,3 @@
-.top {
-  height: 24px;
-  width: 100vw;
-  color: #FFFFFF;
-  font-size: 16px;
-  background-color: #38AEF0;
-  text-align: center;
-}
-
 .side {
   height: 100vh;
   width: 300px;
@@ -37,17 +28,21 @@
   }
   .side__under {
     height: calc(100vh - 100px);
-    color: #FFFFFF;
+    overflow: scroll;
     background-color: #2f3e51;
     padding: 0 20px;
+
+      .group-link {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: bold;
+      }
         &__group-name {
           font-size: 15px;
-          font-weight: bold;
-          padding-top: 20px
+          padding-top: 20px;
         }
         &__last-message {
           font-size: 11px;
-          font-weight: bold;
           padding: 5px 0 40px 0;
         }
   }
@@ -57,10 +52,11 @@
   height: 100vh;
   width: calc(100vw - 300px);
   float: right;
-
+  
   &__up {
     height: 100px;
     padding: 0 40px;
+    border-bottom: solid 1px #eeeeee;
 
     &__left {
       float: left;
@@ -89,13 +85,18 @@
         height: 40px;
         line-height: 40px;
         padding: 0 20px;
+        .edit-group {
+          text-decoration: none;
+          color: #38AEF0;
         }
+      }
     }
   }
   .main__center {
     height: calc(100vh - 282px);
     background-color: #fafafa;
     padding: 46px 40px;
+    overflow: scroll;
     
     &__message-name {
       font-size: 16px;
@@ -124,6 +125,7 @@
     &__contents {
       padding-top: 20px;
       width: 100%;
+      position: relative;
 
       &__text-box {
         background-color: #FFFFFF;
@@ -132,19 +134,24 @@
         float: left;
 
         &__link-icon {
-          float: right;
           padding-right: 10px;
           line-height: 50px;
-
-          .photo-link {
+          position: relative;
+          
+          .selected-photo {
             color: black;
+            position: absolute;
+            top: 18px;
+            right: 130px;
+          }
+          .photo-link {
+            display: none;
           }
         }
       }
       &__send-button {
         background-color: #38AEF0;
-        height: 50px;
-        width: 100px;
+        width: 90px;
         color: #FFFFFF;
         float: right;
         font-size: 20px;
