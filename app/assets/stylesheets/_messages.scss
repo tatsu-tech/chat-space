@@ -97,23 +97,24 @@
     background-color: #fafafa;
     padding: 46px 40px;
     overflow: scroll;
-    
-    &__message-name {
-      font-size: 16px;
-      font-weight: bold;
-      padding-right: 10px;
-      float: left;
+    .main__center__lists {
+      &__message-name {
+        font-size: 16px;
+        font-weight: bold;
+        padding-right: 10px;
+        float: left;
+      }
+      &__message-date {
+        color: #999999;
+        font-size: 12px;
+        float: left;
+      }
+      &__message-text {
+        font-size: 14px;
+        clear: both;
+        padding: 10px 0 40px 0;
     }
-    &__message-date {
-      color: #999999;
-      font-size: 12px;
-      float: left;
-    }
-    &__message-text {
-      font-size: 14px;
-      clear: both;
-      padding: 10px 0 40px 0;
-    }
+  }
 }
   .main__under {
     height: 90px;
