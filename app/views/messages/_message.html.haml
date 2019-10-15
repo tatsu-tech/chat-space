@@ -1,9 +1,9 @@
-
-.main__center__message-name
-  = message.user.name
-.main__center__message-date
-  = message.created_at.strftime("%Y/%m/%d %H:%M")
-.main__center__message-text
-  - if message.content.present?
-    = message.content
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.main__center__lists
+  .main__center__lists__message-name
+    = message.user.name
+  .main__center__lists__message-date
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .main__center__lists__message-text
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

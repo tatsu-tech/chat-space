@@ -1,26 +1,26 @@
 $(function(){ 
   function buildHTML(message){
-   var image = message.image? `<img src="${message.image}"` : "";
-   var html = 
-  `<div class="message" data-message-id=${message.id}>
-    <div class="upper-message">
-      <div class="upper-message__user-name">
+    var image = message.image ? `<img src="${message.image}"` : "";
+    var html = 
+    `<div class="main__center__lists" data-message-id=${message.id}>
+      <div class="main__center__lists__message-name">
         ${message.user_name}
       </div>
-      <div class="upper-message__date">
+      <div class="main__center__lists__message-date">
         ${message.date}
       </div>
     </div>
-    <div class="lower-message">
-      <p class="lower-message__content">
-        ${message.content}
-      </p>
+    <div class="main__center__lists__message-text">
+      ${message.content}
     </div>
-    var image
-  </div>`
-   };
- }
-$('.js-form').on('submit', function(e){
+    <div>
+      ${image}
+    </div>`
+    return html;
+  }
+
+$('#new_message').on('submit', function(e){
+  console.log(this)
  e.preventDefault();
  var formData = new FormData(this);
  var url = $(this).attr('action')
@@ -34,8 +34,8 @@ $('.js-form').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.messages').append(html);
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+    $('.main__center').append(html);
+    $('.main__center').animate({scrollTop: $('.main__center')[0].scrollHeight}, 'fast');   
     $('form')[0].reset();
   })
    .fail(function(){
