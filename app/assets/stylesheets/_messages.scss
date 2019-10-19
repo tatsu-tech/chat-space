@@ -113,6 +113,12 @@
         font-size: 14px;
         clear: both;
         padding: 10px 0 40px 0;
+
+      .lower-message__image {
+        height: 200px;
+        width: auto;
+        display: block;
+      }
     }
   }
 }
