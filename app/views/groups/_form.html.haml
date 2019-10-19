@@ -28,12 +28,12 @@
       .chat-group-form__field--right__name
         = current_user.name  
       .chat-group-form__field--right__selected-lists
-        = f.hidden_field :name, name: 'group[name]',name: 'group[user_ids]'
+        = f.hidden_field :name, name: 'group[user_ids][]', value: 'current_user.id'
         
   
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
-      = f.hidden_field :name, name: 'group[name]', name: 'group[user_ids]'
+      = f.hidden_field :name, name: 'group[user_ids][]', value: 'current_user.id'
       
