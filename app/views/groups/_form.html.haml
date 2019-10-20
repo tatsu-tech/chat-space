@@ -24,16 +24,16 @@
     .chat-group-form__field--left
       = f.label :name, class: 'chat-group-form__label' do
         チャットメンバー
-    .chat-group-form__field--right
-      .chat-group-form__field--right__name
-        = current_user.name  
-      .chat-group-form__field--right__selected-lists
-        = f.hidden_field :name, name: 'group[user_ids][]', value: 'current_user.id'
+    .chat-group-form__field--right.clearfix
+      - group.users.each do |user|
+        .chat-group-form__field--right__name
+          = user.name
+        .chat-group-form__field--right__selected-lists
+          = f.hidden_field :name, name: 'group[user_ids][]', value: user.id
         
   
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
-      = f.hidden_field :name, name: 'group[user_ids][]', value: 'current_user.id'
       

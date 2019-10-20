@@ -33,6 +33,7 @@ $(document).on('turbolinks:load', function() {
         <div class="user-delete-button", data-user-id=${id}, data-user-name=${name}>
           削除
         </div>
+        <input name="group[user_ids][]", value="${id}", type="hidden", id="group_name"></input>
       </div>
     `
     $(".chat-group-form__field--right__selected-lists").append(html);
@@ -62,13 +63,13 @@ $(document).on('turbolinks:load', function() {
     })
    });
 
-    $(document).on("click", ".user-add-button", function() {
+    $(".chat-group-form__field--right__search__user-name").on("click", ".user-add-button", function() {
       var id = $(this).data('user-id')
       var name = $(this).data('user-name')
-      console.log(this)
       $(this).parent().remove();
       
       addSelectedUser(id, name)
+   
     })
 
     $(document).on("click", ".user-delete-button", function() {
