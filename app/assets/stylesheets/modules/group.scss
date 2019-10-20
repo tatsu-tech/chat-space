@@ -72,19 +72,16 @@ li {
       padding-right: 20px;
       padding-left: 20px;
       box-sizing: border-box;
-    .chat-group-form__member-lists {
-        clear: both;
-    }
     }
     &--right {
       float: right;
       width: 70%;
+      
       &:after {
         content: "";
         clear: both;
         display: block;
       }
-        
       &__search__user-name {
         clear: both;
         padding-top: 10px;
@@ -99,25 +96,25 @@ li {
             color: #38aef0;
           }
         }
+      }
+
+      &__name {
+        border-bottom: 1px solid #ddd;
+        padding: 12px 0 10px 15px;
 
       }
-      .chat-group-form__field--right__name {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 15px;
-        font-size: 14px;
-        padding-bottom: 10px;
-
-
-      }
-      .add-selected-user {
-        padding: 10px 15px;
-        font-size: 14px;
-        border-bottom: 1px solid #ddd;
-        margin-top: 10px;
-      
-        .user-delete-button {
-          float: right;
-          color: red;
+    
+      &__selected-lists {
+        .add-selected-user {
+          padding: 10px 15px;
+          font-size: 14px;
+          border-bottom: 1px solid #ddd;
+          margin-top: 10px;
+        
+          .user-delete-button {
+            float: right;
+            color: red;
+          }
         }
       }
     }
