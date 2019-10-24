@@ -72,7 +72,8 @@ $(document).on('turbolinks:load', function() {
    
     })
 
-    $(document).on("click", ".user-delete-button", function() {
+    $(".chat-group-form__field--right").on("click", ".user-delete-button", function() {
       $(this).parent().remove();
+      console.log(this)
     })
   });
